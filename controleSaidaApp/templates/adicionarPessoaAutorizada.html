@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/bootstrap.bundle.min.js' %}">
+</head>
+<body>
+    <div class="cabecalho">
+            <div class="imagem">
+                <img src="{% static 'images/Logo.png' %}">
+            </div>
+            <div class="titulo">
+                <h2>CENTRO INFANTIL IRENE GOMES BORTOLAN</h2>
+            </div>
+    </div>
+    <div class="principal">
+        <form method="POST">
+            {% csrf_token %}
+                <div class="row">
+                    <div class="col-12 titulo-sessao">
+                        <p>Adicionar pessoa autorizada a retirar o aluno</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>{{ pessoas_autorizadas_form.crianca.label }}</p>
+                        {{ pessoas_autorizadas_form.crianca }}
+                    </div>
+                    <div class="col-3">
+                        <p>{{ pessoas_autorizadas_form.nome.label }}</p>
+                        {{ pessoas_autorizadas_form.nome }}
+                    </div>
+                    <div class="col-3">
+                        <p>{{ pessoas_autorizadas_form.parentesco.label }}</p>
+                        {{ pessoas_autorizadas_form.parentesco }}
+                    </div>
+                    <div class="col-3">
+                        <p>{{ pessoas_autorizadas_form.telefone.label }}</p>
+                        {{ pessoas_autorizadas_form.telefone }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-7">
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</body>
+</html>

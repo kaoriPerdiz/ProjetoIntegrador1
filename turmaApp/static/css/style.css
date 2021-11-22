@@ -1,0 +1,37 @@
+.principal {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+img {
+    width: 70%;
+}
+.cabecalho {
+    overflow: auto;
+}
+
+.imagem {
+    float: left;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+h2 {
+    right: 50%;
+}
+
+.titulo-sessao {
+    background-color: #fff2cc;
+    font-weight: bold;
+}
+
+.titulo-sessao p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.row {
+    margin-top: 5px !important;
+}

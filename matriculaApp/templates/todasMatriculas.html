@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/bootstrap.bundle.min.js' %}">
+</head>
+<body>
+    <div class="cabecalho">
+            <div class="imagem">
+                <img src="{% static 'images/Logo.png' %}">
+            </div>
+            <div class="titulo">
+                <h2>CENTRO INFANTIL IRENE GOMES BORTOLAN</h2>
+            </div>
+    </div>
+    <div class="principal">
+        <form method="POST">
+            {% csrf_token %}
+            {% for matricula in matriculas %}
+            <div class="row">
+                <div class="col-12">
+                    <p>Nome: {{ matricula.nome_crianca }}</p>
+                    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'atualiza_matricula' matricula.id %}'">Atualizar matricula</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='{% url 'deleta_matricula' matricula.id %}'">Excluir matrícula</button>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+
+</body>
+</html>
